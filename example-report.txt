@@ -1,0 +1,839 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu-clock:uhpppH'
+# Event count (approx.): 20646464440
+#
+# Children      Self       Samples  Symbol                                                                                              Source:Line                      
+# ........  ........  ............  ..................................................................................................  .................................
+#
+    96.97%     0.00%             0  [.] _start                                                                                          _start+4194349
+            |
+            ---__libc_start_main
+               main
+               foo
+               |          
+               |--72.11%--std::vector<int, std::allocator<int> >::push_back
+               |          |          
+               |          |--68.10%--std::vector<int, std::allocator<int> >::emplace_back<int>
+               |          |          |          
+               |          |          |--28.62%--std::vector<int, std::allocator<int> >::back
+               |          |          |          |          
+               |          |          |          |--18.25%--std::vector<int, std::allocator<int> >::end
+               |          |          |          |          |          
+               |          |          |          |           --13.21%--__normal_iterator (inlined)
+               |          |          |          |          
+               |          |          |          |--6.41%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+               |          |          |          |          |          
+               |          |          |          |           --1.52%--__normal_iterator (inlined)
+               |          |          |          |          
+               |          |          |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+               |          |          |          
+               |          |          |--25.05%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+               |          |          |          |          
+               |          |          |          |--17.56%--__gnu_cxx::new_allocator<int>::construct<int, int>
+               |          |          |          |          |          
+               |          |          |          |           --5.23%--std::forward<int>
+               |          |          |          |          
+               |          |          |           --2.40%--std::forward<int>
+               |          |          |          
+               |          |          |--5.63%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+               |          |          |          |          
+               |          |          |          |--1.71%--std::vector<int, std::allocator<int> >::_M_check_len
+               |          |          |          |          |          
+               |          |          |          |          |--0.88%--std::vector<int, std::allocator<int> >::max_size
+               |          |          |          |          |          |          
+               |          |          |          |          |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --0.64%--std::min<unsigned long>
+               |          |          |          |          |          
+               |          |          |          |           --0.59%--std::vector<int, std::allocator<int> >::size
+               |          |          |          |          
+               |          |          |          |--1.66%--std::vector<int, std::allocator<int> >::_S_relocate
+               |          |          |          |          |          
+               |          |          |          |           --1.52%--std::vector<int, std::allocator<int> >::_S_do_relocate
+               |          |          |          |                     |          
+               |          |          |          |                      --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+               |          |          |          |          
+               |          |          |           --0.54%--std::_Vector_base<int, std::allocator<int> >::_M_allocate
+               |          |          |          
+               |          |           --2.40%--std::forward<int>
+               |          |          
+               |           --1.22%--std::move<int&>
+               |          
+                --9.54%--rand
+                          |          
+                           --9.00%--random
+                                     |          
+                                      --3.38%--random_r
+
+    96.97%     0.00%             0  [.] __libc_start_main                                                                               __libc_start_main+140652614324466
+            |
+            ---main
+               foo
+               |          
+               |--72.11%--std::vector<int, std::allocator<int> >::push_back
+               |          |          
+               |          |--68.10%--std::vector<int, std::allocator<int> >::emplace_back<int>
+               |          |          |          
+               |          |          |--28.62%--std::vector<int, std::allocator<int> >::back
+               |          |          |          |          
+               |          |          |          |--18.25%--std::vector<int, std::allocator<int> >::end
+               |          |          |          |          |          
+               |          |          |          |           --13.21%--__normal_iterator (inlined)
+               |          |          |          |          
+               |          |          |          |--6.41%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+               |          |          |          |          |          
+               |          |          |          |           --1.52%--__normal_iterator (inlined)
+               |          |          |          |          
+               |          |          |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+               |          |          |          
+               |          |          |--25.05%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+               |          |          |          |          
+               |          |          |          |--17.56%--__gnu_cxx::new_allocator<int>::construct<int, int>
+               |          |          |          |          |          
+               |          |          |          |           --5.23%--std::forward<int>
+               |          |          |          |          
+               |          |          |           --2.40%--std::forward<int>
+               |          |          |          
+               |          |          |--5.63%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+               |          |          |          |          
+               |          |          |          |--1.71%--std::vector<int, std::allocator<int> >::_M_check_len
+               |          |          |          |          |          
+               |          |          |          |          |--0.88%--std::vector<int, std::allocator<int> >::max_size
+               |          |          |          |          |          |          
+               |          |          |          |          |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --0.64%--std::min<unsigned long>
+               |          |          |          |          |          
+               |          |          |          |           --0.59%--std::vector<int, std::allocator<int> >::size
+               |          |          |          |          
+               |          |          |          |--1.66%--std::vector<int, std::allocator<int> >::_S_relocate
+               |          |          |          |          |          
+               |          |          |          |           --1.52%--std::vector<int, std::allocator<int> >::_S_do_relocate
+               |          |          |          |                     |          
+               |          |          |          |                      --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+               |          |          |          |          
+               |          |          |           --0.54%--std::_Vector_base<int, std::allocator<int> >::_M_allocate
+               |          |          |          
+               |          |           --2.40%--std::forward<int>
+               |          |          
+               |           --1.22%--std::move<int&>
+               |          
+                --9.54%--rand
+                          |          
+                           --9.00%--random
+                                     |          
+                                      --3.38%--random_r
+
+    96.97%     0.00%             0  [.] main                                                                                            main.cpp:17
+            |
+            ---foo
+               |          
+               |--72.11%--std::vector<int, std::allocator<int> >::push_back
+               |          |          
+               |          |--68.10%--std::vector<int, std::allocator<int> >::emplace_back<int>
+               |          |          |          
+               |          |          |--28.62%--std::vector<int, std::allocator<int> >::back
+               |          |          |          |          
+               |          |          |          |--18.25%--std::vector<int, std::allocator<int> >::end
+               |          |          |          |          |          
+               |          |          |          |           --13.21%--__normal_iterator (inlined)
+               |          |          |          |          
+               |          |          |          |--6.41%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+               |          |          |          |          |          
+               |          |          |          |           --1.52%--__normal_iterator (inlined)
+               |          |          |          |          
+               |          |          |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+               |          |          |          
+               |          |          |--25.05%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+               |          |          |          |          
+               |          |          |          |--17.56%--__gnu_cxx::new_allocator<int>::construct<int, int>
+               |          |          |          |          |          
+               |          |          |          |           --5.23%--std::forward<int>
+               |          |          |          |          
+               |          |          |           --2.40%--std::forward<int>
+               |          |          |          
+               |          |          |--5.63%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+               |          |          |          |          
+               |          |          |          |--1.71%--std::vector<int, std::allocator<int> >::_M_check_len
+               |          |          |          |          |          
+               |          |          |          |          |--0.88%--std::vector<int, std::allocator<int> >::max_size
+               |          |          |          |          |          |          
+               |          |          |          |          |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --0.64%--std::min<unsigned long>
+               |          |          |          |          |          
+               |          |          |          |           --0.59%--std::vector<int, std::allocator<int> >::size
+               |          |          |          |          
+               |          |          |          |--1.66%--std::vector<int, std::allocator<int> >::_S_relocate
+               |          |          |          |          |          
+               |          |          |          |           --1.52%--std::vector<int, std::allocator<int> >::_S_do_relocate
+               |          |          |          |                     |          
+               |          |          |          |                      --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+               |          |          |          |          
+               |          |          |           --0.54%--std::_Vector_base<int, std::allocator<int> >::_M_allocate
+               |          |          |          
+               |          |           --2.40%--std::forward<int>
+               |          |          
+               |           --1.22%--std::move<int&>
+               |          
+                --9.54%--rand
+                          |          
+                           --9.00%--random
+                                     |          
+                                      --3.38%--random_r
+
+    94.67%    12.77%           261  [.] foo                                                                                             main.cpp:11
+            |          
+            |--81.90%--foo
+            |          |          
+            |          |--72.11%--std::vector<int, std::allocator<int> >::push_back
+            |          |          |          
+            |          |          |--68.10%--std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          |          |          |          
+            |          |          |          |--28.62%--std::vector<int, std::allocator<int> >::back
+            |          |          |          |          |          
+            |          |          |          |          |--18.25%--std::vector<int, std::allocator<int> >::end
+            |          |          |          |          |          |          
+            |          |          |          |          |           --13.21%--__normal_iterator (inlined)
+            |          |          |          |          |          
+            |          |          |          |          |--6.41%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+            |          |          |          |          |          |          
+            |          |          |          |          |           --1.52%--__normal_iterator (inlined)
+            |          |          |          |          |          
+            |          |          |          |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+            |          |          |          |          
+            |          |          |          |--25.05%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+            |          |          |          |          |          
+            |          |          |          |          |--17.56%--__gnu_cxx::new_allocator<int>::construct<int, int>
+            |          |          |          |          |          |          
+            |          |          |          |          |           --5.23%--std::forward<int>
+            |          |          |          |          |          
+            |          |          |          |           --2.40%--std::forward<int>
+            |          |          |          |          
+            |          |          |          |--5.63%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+            |          |          |          |          |          
+            |          |          |          |          |--1.71%--std::vector<int, std::allocator<int> >::_M_check_len
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--0.88%--std::vector<int, std::allocator<int> >::max_size
+            |          |          |          |          |          |          |          
+            |          |          |          |          |          |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+            |          |          |          |          |          |                     |          
+            |          |          |          |          |          |                      --0.64%--std::min<unsigned long>
+            |          |          |          |          |          |          
+            |          |          |          |          |           --0.59%--std::vector<int, std::allocator<int> >::size
+            |          |          |          |          |          
+            |          |          |          |          |--1.66%--std::vector<int, std::allocator<int> >::_S_relocate
+            |          |          |          |          |          |          
+            |          |          |          |          |           --1.52%--std::vector<int, std::allocator<int> >::_S_do_relocate
+            |          |          |          |          |                     |          
+            |          |          |          |          |                      --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+            |          |          |          |          |          
+            |          |          |          |           --0.54%--std::_Vector_base<int, std::allocator<int> >::_M_allocate
+            |          |          |          |          
+            |          |          |           --2.40%--std::forward<int>
+            |          |          |          
+            |          |           --1.22%--std::move<int&>
+            |          |          
+            |           --9.54%--rand
+            |                     |          
+            |                      --9.00%--random
+            |                                |          
+            |                                 --3.38%--random_r
+            |          
+             --12.77%--_start
+                       __libc_start_main
+                       main
+                       foo
+
+    72.11%     2.79%            57  [.] std::vector<int, std::allocator<int> >::push_back                                               stl_vector.h:1201
+            |          
+            |--69.32%--std::vector<int, std::allocator<int> >::push_back
+            |          |          
+            |          |--68.10%--std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          |          |          
+            |          |          |--28.62%--std::vector<int, std::allocator<int> >::back
+            |          |          |          |          
+            |          |          |          |--18.25%--std::vector<int, std::allocator<int> >::end
+            |          |          |          |          |          
+            |          |          |          |           --13.21%--__normal_iterator (inlined)
+            |          |          |          |          
+            |          |          |          |--6.41%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+            |          |          |          |          |          
+            |          |          |          |           --1.52%--__normal_iterator (inlined)
+            |          |          |          |          
+            |          |          |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+            |          |          |          
+            |          |          |--25.05%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+            |          |          |          |          
+            |          |          |          |--17.56%--__gnu_cxx::new_allocator<int>::construct<int, int>
+            |          |          |          |          |          
+            |          |          |          |           --5.23%--std::forward<int>
+            |          |          |          |          
+            |          |          |           --2.40%--std::forward<int>
+            |          |          |          
+            |          |          |--5.63%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+            |          |          |          |          
+            |          |          |          |--1.71%--std::vector<int, std::allocator<int> >::_M_check_len
+            |          |          |          |          |          
+            |          |          |          |          |--0.88%--std::vector<int, std::allocator<int> >::max_size
+            |          |          |          |          |          |          
+            |          |          |          |          |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+            |          |          |          |          |                     |          
+            |          |          |          |          |                      --0.64%--std::min<unsigned long>
+            |          |          |          |          |          
+            |          |          |          |           --0.59%--std::vector<int, std::allocator<int> >::size
+            |          |          |          |          
+            |          |          |          |--1.66%--std::vector<int, std::allocator<int> >::_S_relocate
+            |          |          |          |          |          
+            |          |          |          |           --1.52%--std::vector<int, std::allocator<int> >::_S_do_relocate
+            |          |          |          |                     |          
+            |          |          |          |                      --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+            |          |          |          |          
+            |          |          |           --0.54%--std::_Vector_base<int, std::allocator<int> >::_M_allocate
+            |          |          |          
+            |          |           --2.40%--std::forward<int>
+            |          |          
+            |           --1.22%--std::move<int&>
+            |          
+             --2.79%--_start
+                       __libc_start_main
+                       main
+                       foo
+                       std::vector<int, std::allocator<int> >::push_back
+
+    29.40%     0.78%            16  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:123
+            |          
+            |--28.62%--std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          std::vector<int, std::allocator<int> >::back
+            |          |          
+            |          |--18.25%--std::vector<int, std::allocator<int> >::end
+            |          |          |          
+            |          |           --13.21%--__normal_iterator (inlined)
+            |          |          
+            |          |--6.41%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+            |          |          |          
+            |          |           --1.52%--__normal_iterator (inlined)
+            |          |          
+            |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+            |          
+             --0.78%--_start
+                       __libc_start_main
+                       main
+                       foo
+                       std::vector<int, std::allocator<int> >::push_back
+                       std::vector<int, std::allocator<int> >::emplace_back<int>
+
+    28.96%     1.76%            36  [.] std::vector<int, std::allocator<int> >::back                                                    stl_vector.h:1143
+            |          
+            |--27.20%--std::vector<int, std::allocator<int> >::back
+            |          |          
+            |          |--19.13%--std::vector<int, std::allocator<int> >::end
+            |          |          |          
+            |          |           --13.21%--__normal_iterator (inlined)
+            |          |          
+            |          |--6.80%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+            |          |          |          
+            |          |           --1.52%--__normal_iterator (inlined)
+            |          |          
+            |           --1.27%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+            |          
+             --1.76%--_start
+                       __libc_start_main
+                       main
+                       foo
+                       std::vector<int, std::allocator<int> >::push_back
+                       std::vector<int, std::allocator<int> >::emplace_back<int>
+                       std::vector<int, std::allocator<int> >::back
+
+    25.54%     5.19%           106  [.] std::allocator_traits<std::allocator<int> >::construct<int, int>                                alloc_traits.h:484
+            |          
+            |--20.35%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+            |          |          
+            |          |--17.81%--__gnu_cxx::new_allocator<int>::construct<int, int>
+            |          |          |          
+            |          |           --5.28%--std::forward<int>
+            |          |          
+            |           --2.54%--std::forward<int>
+            |          
+             --5.14%--_start
+                       __libc_start_main
+                       main
+                       foo
+                       std::vector<int, std::allocator<int> >::push_back
+                       std::vector<int, std::allocator<int> >::emplace_back<int>
+                       |          
+                        --5.09%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+
+    25.15%     0.05%             1  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:115
+            |          
+             --25.10%--std::vector<int, std::allocator<int> >::emplace_back<int>
+                       std::allocator_traits<std::allocator<int> >::construct<int, int>
+                       |          
+                       |--17.56%--__gnu_cxx::new_allocator<int>::construct<int, int>
+                       |          |          
+                       |           --5.23%--std::forward<int>
+                       |          
+                        --2.40%--std::forward<int>
+
+    19.42%     6.02%           123  [.] std::vector<int, std::allocator<int> >::end                                                     stl_vector.h:827
+            |          
+            |--13.41%--std::vector<int, std::allocator<int> >::end
+            |          __normal_iterator (inlined)
+            |          
+            |--5.14%--_start
+            |          __libc_start_main
+            |          main
+            |          foo
+            |          std::vector<int, std::allocator<int> >::push_back
+            |          std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          |          
+            |           --5.04%--std::vector<int, std::allocator<int> >::back
+            |                     std::vector<int, std::allocator<int> >::end
+            |          
+             --0.88%--std::vector<int, std::allocator<int> >::back
+                       std::vector<int, std::allocator<int> >::end
+
+    18.44%    12.52%           256  [.] __gnu_cxx::new_allocator<int>::construct<int, int>                                              new_allocator.h:147
+            |          
+            |--12.48%--_start
+            |          __libc_start_main
+            |          main
+            |          foo
+            |          std::vector<int, std::allocator<int> >::push_back
+            |          std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          |          
+            |           --12.33%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+            |                     __gnu_cxx::new_allocator<int>::construct<int, int>
+            |          
+             --5.92%--__gnu_cxx::new_allocator<int>::construct<int, int>
+                       std::forward<int>
+
+    15.70%    15.70%           321  [.] __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::__normal_iterator  stl_iterator.h:807
+            |          
+             --14.97%--_start
+                       __libc_start_main
+                       main
+                       foo
+                       std::vector<int, std::allocator<int> >::push_back
+                       std::vector<int, std::allocator<int> >::emplace_back<int>
+                       |          
+                        --14.73%--std::vector<int, std::allocator<int> >::back
+                                  |          
+                                  |--13.21%--std::vector<int, std::allocator<int> >::end
+                                  |          __normal_iterator (inlined)
+                                  |          
+                                   --1.52%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+                                             __normal_iterator (inlined)
+
+    15.70%     0.00%             0  [.] __normal_iterator (inlined)                                                                     stl_iterator.h:807
+    11.06%    11.06%           226  [.] std::forward<int>                                                                               move.h:75
+            |          
+            |--10.18%--_start
+            |          __libc_start_main
+            |          main
+            |          foo
+            |          std::vector<int, std::allocator<int> >::push_back
+            |          std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          |          
+            |          |--7.63%--std::allocator_traits<std::allocator<int> >::construct<int, int>
+            |          |          |          
+            |          |          |--5.23%--__gnu_cxx::new_allocator<int>::construct<int, int>
+            |          |          |          std::forward<int>
+            |          |          |          
+            |          |           --2.40%--std::forward<int>
+            |          |          
+            |           --2.40%--std::forward<int>
+            |          
+             --0.64%--__gnu_cxx::new_allocator<int>::construct<int, int>
+                       std::forward<int>
+
+     9.00%     0.00%             0  [.] rand                                                                                            rand+140652614324236
+            |
+            ---random
+               |          
+                --3.38%--random_r
+
+     6.85%     5.28%           108  [.] __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-          stl_iterator.h:868
+            |          
+            |--4.89%--_start
+            |          __libc_start_main
+            |          main
+            |          foo
+            |          std::vector<int, std::allocator<int> >::push_back
+            |          std::vector<int, std::allocator<int> >::emplace_back<int>
+            |          std::vector<int, std::allocator<int> >::back
+            |          __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+            |          
+             --1.57%--__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator-
+                       __normal_iterator (inlined)
+
+     5.87%     0.10%             2  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:121
+            |          
+             --5.77%--std::vector<int, std::allocator<int> >::emplace_back<int>
+                       |          
+                        --5.63%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+                                  |          
+                                  |--1.71%--std::vector<int, std::allocator<int> >::_M_check_len
+                                  |          |          
+                                  |          |--0.88%--std::vector<int, std::allocator<int> >::max_size
+                                  |          |          |          
+                                  |          |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+                                  |          |                     |          
+                                  |          |                      --0.64%--std::min<unsigned long>
+                                  |          |          
+                                  |           --0.59%--std::vector<int, std::allocator<int> >::size
+                                  |          
+                                  |--1.66%--std::vector<int, std::allocator<int> >::_S_relocate
+                                  |          |          
+                                  |           --1.52%--std::vector<int, std::allocator<int> >::_S_do_relocate
+                                  |                     |          
+                                  |                      --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+                                  |          
+                                   --0.54%--std::_Vector_base<int, std::allocator<int> >::_M_allocate
+
+     3.38%     0.00%             0  [.] random                                                                                          random+140652614324288
+            |
+            ---random_r
+
+     2.94%     0.49%            10  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:116
+            |          
+             --2.45%--std::vector<int, std::allocator<int> >::emplace_back<int>
+                       std::forward<int>
+
+     2.20%     2.20%            45  [.] foo                                                                                             main.cpp:10
+            |
+            ---__libc_start_main
+               main
+               foo
+
+     1.71%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:436
+            |
+            ---std::vector<int, std::allocator<int> >::_M_check_len
+               |          
+               |--0.88%--std::vector<int, std::allocator<int> >::max_size
+               |          |          
+               |           --0.78%--std::vector<int, std::allocator<int> >::_S_max_size
+               |                     |          
+               |                      --0.64%--std::min<unsigned long>
+               |          
+                --0.59%--std::vector<int, std::allocator<int> >::size
+
+     1.61%     0.10%             2  [.] std::vector<int, std::allocator<int> >::_S_relocate                                             stl_vector.h:466
+            |          
+             --1.52%--std::vector<int, std::allocator<int> >::_S_relocate
+                       std::vector<int, std::allocator<int> >::_S_do_relocate
+                       |          
+                        --1.42%--std::__relocate_a<int*, int*, std::allocator<int> >
+
+     1.52%     0.10%             2  [.] std::vector<int, std::allocator<int> >::_S_do_relocate                                          stl_vector.h:453
+            |          
+             --1.42%--std::vector<int, std::allocator<int> >::_S_do_relocate
+                       std::__relocate_a<int*, int*, std::allocator<int> >
+
+     1.27%     1.27%            26  [.] __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*          stl_iterator.h:820
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+               std::vector<int, std::allocator<int> >::back
+               __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*
+
+     1.22%     1.22%            25  [.] std::move<int&>                                                                                 move.h:100
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::move<int&>
+
+     1.13%     1.13%            23  [.] random                                                                                          random+103
+            |
+            ---__libc_start_main
+               main
+               foo
+               rand
+               random
+
+     1.13%     1.13%            23  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:117
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+
+     1.13%     0.00%             0  [.] random                                                                                          random+140652614324327
+     1.08%     1.08%            22  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:0
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+
+     1.03%     1.03%            21  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:111
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+
+     0.93%     0.93%            19  [.] std::vector<int, std::allocator<int> >::back                                                    stl_vector.h:1141
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+               std::vector<int, std::allocator<int> >::back
+
+     0.93%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:461
+            |          
+             --0.88%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+                       |          
+                        --0.83%--std::vector<int, std::allocator<int> >::_S_relocate
+                                  |          
+                                   --0.73%--std::vector<int, std::allocator<int> >::_S_do_relocate
+                                             |          
+                                              --0.68%--std::__relocate_a<int*, int*, std::allocator<int> >
+
+     0.93%     0.93%            19  [.] random                                                                                          random+65
+            |
+            ---__libc_start_main
+               main
+               foo
+               rand
+               random
+
+     0.93%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_check_len                                            stl_vector.h:1755
+            |          
+             --0.78%--std::vector<int, std::allocator<int> >::max_size
+                       |          
+                        --0.68%--std::vector<int, std::allocator<int> >::_S_max_size
+                                  |          
+                                   --0.54%--std::min<unsigned long>
+
+     0.93%     0.00%             0  [.] random                                                                                          random+140652614324289
+     0.88%     0.10%             2  [.] std::vector<int, std::allocator<int> >::max_size                                                stl_vector.h:921
+            |          
+             --0.78%--std::vector<int, std::allocator<int> >::max_size
+                       std::vector<int, std::allocator<int> >::_S_max_size
+                       |          
+                        --0.64%--std::min<unsigned long>
+
+     0.88%     0.88%            18  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:119
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+
+     0.88%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:466
+            |          
+             --0.83%--std::vector<int, std::allocator<int> >::_S_relocate
+                       |          
+                        --0.78%--std::vector<int, std::allocator<int> >::_S_do_relocate
+                                  |          
+                                   --0.73%--std::__relocate_a<int*, int*, std::allocator<int> >
+
+     0.78%     0.78%            16  [.] std::vector<int, std::allocator<int> >::emplace_back<int>                                       vector.tcc:112
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+
+     0.73%     0.73%            15  [.] random_r                                                                                        random_r+12
+            |
+            ---__libc_start_main
+               main
+               foo
+               rand
+               random
+               random_r
+
+     0.73%     0.73%            15  [.] random                                                                                          random+105
+            |
+            ---__libc_start_main
+               main
+               foo
+               rand
+               random
+
+     0.73%     0.00%             0  [.] std::__relocate_a<int*, int*, std::allocator<int> >                                             stl_uninitialized.h:964
+     0.73%     0.00%             0  [.] std::vector<int, std::allocator<int> >::begin                                                   stl_vector.h:809
+            |
+            ---__normal_iterator (inlined)
+
+     0.73%     0.00%             0  [.] random                                                                                          random+140652614324329
+     0.73%     0.00%             0  [.] random_r                                                                                        random_r+140652614324236
+     0.68%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_S_max_size                                             stl_vector.h:1781
+            |          
+             --0.64%--std::vector<int, std::allocator<int> >::_S_max_size
+                       std::min<unsigned long>
+
+     0.64%     0.64%            13  [.] random                                                                                          random+24
+            |
+            ---__libc_start_main
+               main
+               foo
+               rand
+               random
+
+     0.64%     0.00%             0  [.] random                                                                                          random+140652614324248
+     0.59%     0.59%            12  [.] std::min<unsigned long>                                                                         stl_algobase.h:203
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+               std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+               std::vector<int, std::allocator<int> >::_M_check_len
+               std::vector<int, std::allocator<int> >::max_size
+               std::vector<int, std::allocator<int> >::_S_max_size
+               std::min<unsigned long>
+
+     0.59%     0.59%            12  [.] std::vector<int, std::allocator<int> >::size                                                    stl_vector.h:916
+            |
+            ---__libc_start_main
+               main
+               foo
+               std::vector<int, std::allocator<int> >::push_back
+               std::vector<int, std::allocator<int> >::emplace_back<int>
+               std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+               std::vector<int, std::allocator<int> >::_M_check_len
+               std::vector<int, std::allocator<int> >::size
+
+     0.59%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:440
+            |          
+             --0.54%--std::vector<int, std::allocator<int> >::_M_realloc_insert<int>
+                       std::_Vector_base<int, std::allocator<int> >::_M_allocate
+
+     0.59%     0.59%            12  [.] random                                                                                          random+48
+            |
+            ---__libc_start_main
+               main
+               foo
+               rand
+               random
+
+     0.59%     0.00%             0  [.] random                                                                                          random+140652614324272
+     0.54%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_check_len                                            stl_vector.h:1758
+     0.49%     0.10%             2  [.] std::_Vector_base<int, std::allocator<int> >::_M_allocate                                       stl_vector.h:343
+     0.49%     0.49%            10  [.] random_r                                                                                        random_r+72
+     0.49%     0.00%             0  [.] random_r                                                                                        random_r+140652614324296
+     0.44%     0.44%             9  [.] std::__niter_base<int*>                                                                         stl_algobase.h:282
+     0.44%     0.44%             9  [.] random_r                                                                                        random_r+131
+     0.44%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:439
+     0.44%     0.00%             0  [.] random_r                                                                                        random_r+140652614324355
+     0.39%     0.05%             1  [.] std::allocator_traits<std::allocator<int> >::allocate                                           alloc_traits.h:444
+     0.39%     0.05%             1  [.] std::allocator_traits<std::allocator<int> >::deallocate                                         alloc_traits.h:470
+     0.39%     0.39%             8  [.] random                                                                                          random+0
+     0.39%     0.39%             8  [.] random                                                                                          random+41
+     0.39%     0.00%             0  [.] std::_Vector_base<int, std::allocator<int> >::_M_deallocate                                     stl_vector.h:351
+     0.39%     0.00%             0  [.] random                                                                                          random+140652614324224
+     0.39%     0.00%             0  [.] random                                                                                          random+140652614324265
+     0.34%     0.34%             7  [.] std::__relocate_a<int*, int*, std::allocator<int> >                                             stl_uninitialized.h:963
+     0.34%     0.15%             3  [.] std::__relocate_a<int*, int*, std::allocator<int> >                                             stl_uninitialized.h:966
+     0.34%     0.34%             7  [.] random_r                                                                                        random_r+113
+     0.34%     0.34%             7  [.] random_r                                                                                        random_r+76
+     0.34%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:500
+     0.34%     0.00%             0  [.] random_r                                                                                        random_r+140652614324300
+     0.34%     0.00%             0  [.] random_r                                                                                        random_r+140652614324337
+     0.29%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:449
+     0.29%     0.29%             6  [.] random                                                                                          random+75
+     0.29%     0.29%             6  [.] rand                                                                                            rand+8
+     0.29%     0.00%             0  [.] rand                                                                                            rand+140652614324232
+     0.29%     0.00%             0  [.] random                                                                                          random+140652614324299
+     0.24%     0.15%             3  [.] std::vector<int, std::allocator<int> >::_M_check_len                                            stl_vector.h:1759
+     0.24%     0.24%             5  [.] random_r                                                                                        random_r+18
+     0.24%     0.24%             5  [.] random                                                                                          random+4
+     0.24%     0.24%             5  [.] rand                                                                                            rand+13
+     0.24%     0.24%             5  [.] rand@plt                                                                                        rand@plt+0
+     0.24%     0.00%             0  [.] rand                                                                                            rand+140652614324237
+     0.24%     0.00%             0  [.] rand@plt                                                                                        rand@plt+4194304
+     0.24%     0.00%             0  [.] random                                                                                          random+140652614324228
+     0.24%     0.00%             0  [.] random_r                                                                                        random_r+140652614324242
+     0.20%     0.20%             4  [.] __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::base               stl_iterator.h:872
+     0.20%     0.10%             2  [.] __gnu_cxx::operator-<int*, std::vector<int, std::allocator<int> > >                             stl_iterator.h:992
+     0.20%     0.20%             4  [.] random_r                                                                                        random_r+103
+     0.20%     0.20%             4  [.] random                                                                                          random+60
+     0.20%     0.00%             0  [.] __gnu_cxx::new_allocator<int>::allocate                                                         new_allocator.h:114
+     0.20%     0.00%             0  [.] __gnu_cxx::new_allocator<int>::deallocate                                                       new_allocator.h:128
+     0.20%     0.00%             0  [.] random                                                                                          random+140652614324284
+     0.20%     0.00%             0  [.] random_r                                                                                        random_r+140652614324327
+     0.15%     0.15%             3  [.] std::__relocate_a_1<int, int>                                                                   stl_uninitialized.h:928
+     0.15%     0.15%             3  [.] random_r                                                                                        random_r+108
+     0.15%     0.15%             3  [.] random_r                                                                                        random_r+25
+     0.15%     0.15%             3  [.] random_r                                                                                        random_r+83
+     0.15%     0.15%             3  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:467
+     0.15%     0.00%             0  [.] operator new                                                                                    operator new+140652617990168
+     0.15%     0.00%             0  [.] random_r                                                                                        random_r+140652614324249
+     0.15%     0.00%             0  [.] random_r                                                                                        random_r+140652614324307
+     0.15%     0.00%             0  [.] random_r                                                                                        random_r+140652614324332
+     0.10%     0.10%             2  [.] std::__relocate_a_1<int, int>                                                                   stl_uninitialized.h:927
+     0.10%     0.10%             2  [.] std::__relocate_a_1<int, int>                                                                   stl_uninitialized.h:930
+     0.10%     0.10%             2  [.] std::allocator_traits<std::allocator<int> >::max_size                                           alloc_traits.h:506
+     0.10%     0.10%             2  [.] __gnu_cxx::new_allocator<int>::allocate                                                         new_allocator.h:103
+     0.10%     0.10%             2  [.] __gnu_cxx::new_allocator<int>::deallocate                                                       new_allocator.h:129
+     0.10%     0.05%             1  [.] __gnu_cxx::new_allocator<int>::allocate                                                         new_allocator.h:104
+     0.10%     0.10%             2  [.] std::max<unsigned long>                                                                         stl_algobase.h:227
+     0.10%     0.10%             2  [.] random_r                                                                                        random_r+70
+     0.10%     0.10%             2  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:441
+     0.10%     0.00%             0  [.] foo                                                                                             main.cpp:12
+     0.10%     0.10%             2  [.] random                                                                                          random+32
+     0.10%     0.00%             0  [.] std::__relocate_a_1<int, int>                                                                   stl_uninitialized.h:929
+     0.10%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:452
+     0.10%     0.00%             0  [.] std::vector<int, std::allocator<int> >::_S_max_size                                             stl_vector.h:1780
+     0.10%     0.00%             0  [.] random                                                                                          random+140652614324256
+     0.10%     0.00%             0  [.] random_r                                                                                        random_r+140652614324294
+     0.05%     0.05%             1  [.] 0x000000000009add6                                                                              libc-2.31.so[9add6]
+     0.05%     0.05%             1  [.] malloc                                                                                          malloc+286
+     0.05%     0.05%             1  [.] memmove@plt                                                                                     memmove@plt+0
+     0.05%     0.05%             1  [.] 0x000000000018e8f4                                                                              libc-2.31.so[18e8f4]
+     0.05%     0.05%             1  [.] __gnu_cxx::new_allocator<int>::max_size                                                         new_allocator.h:135
+     0.05%     0.05%             1  [.] cfree                                                                                           cfree+4
+     0.05%     0.05%             1  [.] operator new                                                                                    operator new+5
+     0.05%     0.05%             1  [.] std::__relocate_a_1<int, int>                                                                   stl_uninitialized.h:926
+     0.05%     0.05%             1  [.] std::min<unsigned long>                                                                         stl_algobase.h:206
+     0.05%     0.05%             1  [.] 0x0000000000099a2b                                                                              libc-2.31.so[99a2b]
+     0.05%     0.05%             1  [.] 0x000000000009a100                                                                              libc-2.31.so[9a100]
+     0.05%     0.05%             1  [.] __gnu_cxx::new_allocator<int>::deallocate                                                       new_allocator.h:120
+     0.05%     0.05%             1  [.] 0x0000000000099fa3                                                                              libc-2.31.so[99fa3]
+     0.05%     0.05%             1  [.] std::_Vector_base<int, std::allocator<int> >::_M_allocate                                       stl_vector.h:0
+     0.05%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_S_relocate                                             stl_vector.h:464
+     0.05%     0.05%             1  [.] random_r                                                                                        random_r+7
+     0.05%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:450
+     0.05%     0.05%             1  [.] std::vector<int, std::allocator<int> >::_M_realloc_insert<int>                                  vector.tcc:464
+     0.05%     0.00%             0  [.] ~vector (inlined)                                                                               stl_vector.h:680
+     0.05%     0.05%             1  [.] std::vector<int, std::allocator<int> >::~vector                                                 stl_vector.h:677
+     0.05%     0.00%             0  [.] ~_Vector_base (inlined)                                                                         stl_vector.h:332
+     0.05%     0.05%             1  [.] malloc                                                                                          malloc+173
+     0.05%     0.00%             0  [.] malloc                                                                                          malloc+140652614324339
+     0.05%     0.00%             0  [.] cfree                                                                                           cfree+140652614324228
+     0.05%     0.00%             0  [.] malloc                                                                                          malloc+140652614324397
+     0.05%     0.00%             0  [.] malloc                                                                                          malloc+140652614324510
+     0.05%     0.00%             0  [.] memmove@plt                                                                                     memmove@plt+4194304
+     0.05%     0.00%             0  [.] operator new                                                                                    operator new+140652617990149
+     0.05%     0.00%             0  [.] random_r                                                                                        random_r+140652614324231
+     0.05%     0.00%             0  [.] ~vector (inlined)                                                                               stl_vector.h:677
+     0.05%     0.00%             0  [.] 0x00007fec3d26aa2b                                                                              libc-2.31.so[7fec3d26aa2b]
+     0.05%     0.00%             0  [.] 0x00007fec3d26afa3                                                                              libc-2.31.so[7fec3d26afa3]
+     0.05%     0.00%             0  [.] 0x00007fec3d26b100                                                                              libc-2.31.so[7fec3d26b100]
+     0.05%     0.00%             0  [.] 0x00007fec3d26bdd6                                                                              libc-2.31.so[7fec3d26bdd6]
+     0.05%     0.00%             0  [.] 0x00007fec3d35f8f4                                                                              libc-2.31.so[7fec3d35f8f4]
+
+
+#
+# (Tip: To see callchains in a more compact form: perf report -g folded)
+#
